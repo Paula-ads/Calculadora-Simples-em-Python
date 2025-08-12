@@ -1,0 +1,34 @@
+def calculadora():
+    print("Calculadora Simples")
+    print("Escolha a operação:")
+    print(" +  Soma")
+    print(" -  Subtração")
+    print(" *  Multiplicação")
+    print(" /  Divisão")
+
+    # Pega os números do usuário
+    num1 = float(input("Digite o primeiro número: "))
+    operador = input("Digite a operação (+, -, *, /): ")
+    num2 = float(input("Digite o segundo número: "))
+
+    # Realiza a operação escolhida
+    if operador == '+':
+        resultado = num1 + num2
+    elif operador == '-':
+        resultado = num1 - num2
+    elif operador == '*':
+        resultado = num1 * num2
+    elif operador == '/':
+        # Verifica divisão por zero
+        if num2 == 0:
+            print("Erro: Divisão por zero não é permitida.")
+            return
+        resultado = num1 / num2
+    else:
+        print("Operação inválida!")
+        return
+
+    print(f"Resultado: {resultado}")
+
+# Executa a calculadora
+calculadora()
